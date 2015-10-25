@@ -359,6 +359,21 @@ input.search-form:hover {
 
 
 /*************************
+*******Login******
+**************************/
+
+
+#login-user {
+  position: relative;
+  height: 600px;
+}
+
+.no-margin {
+  margin: 0;
+  padding: 0;
+}
+
+/*************************
 *******Home Page******
 **************************/
 
@@ -2532,6 +2547,7 @@ shortcodes page css
   margin-left: 15px;
 }
 
+.modal-footer {   border-top: 0px; }
 
 
 

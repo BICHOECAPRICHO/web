@@ -19,7 +19,8 @@
 					            <ul class="nav navbar-nav">
 					                <li><a href="index">Principal</a></li>
 					                <li><a href="about">Sobre</a></li>			                
-					                <li><a href="contact">Contato</a></li>                        
+					                <li><a href="contact">Contato</a></li>
+					                <li><a href="formulario-login">Login</a></li>                           
 					            </ul>
 					        </div>
 					    </div><!--/.container-->
