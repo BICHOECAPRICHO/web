@@ -21,21 +21,21 @@ public class LoginController {
 
 	@RequestMapping("loginForm")
 	public String loginForm() {
-		return "formulario-login";
+		return "login";
 	}
 
 	@RequestMapping("efetuaLogin")
 	public String efetuaLogin(Usuario usuario, HttpSession session) {
 		if (dao.existeUsuario(usuario)) {
 			session.setAttribute("usuarioLogado", usuario);
-			return "about";
+			return "lista";
 		}
-		return "redirect:formulario-login";
+		return "redirect:login";
 	}
 
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:formulario-login";
+		return "redirect:login";
 	}
 }

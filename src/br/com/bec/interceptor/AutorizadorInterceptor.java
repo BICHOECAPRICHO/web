@@ -12,7 +12,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 		String uri = request.getRequestURI();
 		if (uri.endsWith("index") 
 				|| uri.contains("about")
-				|| uri.contains("formulario-login")
+				|| uri.contains("login")
 				|| uri.contains("efetuaLogin")
 				|| uri.contains("contact")
 				|| uri.contains("resources")) {

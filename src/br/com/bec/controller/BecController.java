@@ -21,8 +21,8 @@ public class BecController {
 		return "contact";
 	}	
 	
-	@RequestMapping("formulario-login")
+	@RequestMapping("login")
 	public String login() {		
-		return "formulario-login";
+		return "login";
 	}	
 }

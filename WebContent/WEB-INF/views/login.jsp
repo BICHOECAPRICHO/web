@@ -42,14 +42,13 @@
 				      <div class="modal-body">
 				          <form class="form col-md-12 center-block">
 				            <div class="form-group">
-				              <input type="text" class="form-control input-lg" placeholder="Email">
+				              <input type="text" class="form-control input-lg" placeholder="Email" name="login">
 				            </div>
 				            <div class="form-group">
-				              <input type="password" class="form-control input-lg" placeholder="Senha">
+				              <input type="password" class="form-control input-lg" placeholder="Senha" name="senha">
 				            </div>
 				            <div class="form-group">
-				              <button  class="btn btn-primary btn-lg btn-block">Entrar</button>
-				              <a href="entrarLogin">Login</a>
+				              <button  class="btn btn-primary btn-lg btn-block">Entrar</button>				              
 				              <span class="pull-right"><a href="#">Registrar</a></span><span><a href="#">Precisa de Ajuda?</a></span>
 				            </div>
 				          </form>
