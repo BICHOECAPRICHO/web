@@ -18,11 +18,13 @@
 	<mvc:annotation-driven />
 	<mvc:default-servlet-handler />
 
-	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://bec.mysql.uhserver.com/bec" />
 		<property name="username" value="bec" />
 		<property name="password" value="@XL700transalp" />
+		<property name="validationQuery" value="SELECT 1"/>
+  		<property name="testOnBorrow" value="true"/>
 	</bean>
 
 	<bean
