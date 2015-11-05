@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.bec.dao.TarefaDao;
 import br.com.bec.modelo.Tarefa;
 
-
-
-
 @Transactional
 @Controller
 public class TarefasController {

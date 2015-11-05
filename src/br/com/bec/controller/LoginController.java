@@ -4,20 +4,18 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.bec.dao.JdbcUsuarioDao;
+import br.com.bec.dao.UsuarioDao;
 import br.com.bec.modelo.Usuario;
 
 @Controller
+@Transactional
 public class LoginController {
-	
-	private final JdbcUsuarioDao dao;
-	
+
 	@Autowired
-	private LoginController(JdbcUsuarioDao dao) {
-		this.dao = dao;
-	}
+	UsuarioDao dao;
 
 	@RequestMapping("loginForm")
 	public String loginForm() {
@@ -26,11 +24,15 @@ public class LoginController {
 
 	@RequestMapping("efetuaLogin")
 	public String efetuaLogin(Usuario usuario, HttpSession session) {
-		if (dao.existeUsuario(usuario)) {
+
+		Usuario respUser = dao.existeUsuario(usuario);
+		if (respUser == null) {
+			return "redirect:login";
+		} else {
 			session.setAttribute("usuarioLogado", usuario);
 			return "redirect:listaTarefas";
 		}
-		return "redirect:login";
+
 	}
 
 	@RequestMapping("logout")

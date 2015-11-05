@@ -28,26 +28,124 @@
 	    
 	</head>
 	<body class="homepage">		
-			<c:import url="/WEB-INF/views/header.jsp" />						
-													
-				<section id="content">
-				    <div class="container">
-				        <div class="row">	
-				        			
-							<h3>Adicionar tarefas</h3>
-								<form:errors path="tarefa.descricao" cssStyle="color:red"/>
-								<form action="adicionaTarefa" method="post">
-									Descrição: <br />
-									<textarea name="descricao" rows="5" cols="100"></textarea>
-									<br /> <input type="submit" value="Adicionar">	
-								</form>
-																										  			    				
-				    		<a href="limparTarefa" class="btn btn-info" role="button">Limpar</a>				
-				    		<a href="logout" class="btn btn-info" role="button">Sair</a>
-						</div>
+			<c:import url="/WEB-INF/views/header.jsp" />
+			
+				<div class="jumbotron">
+					<div class="container">
+						<h1>Agenda</h1>
+						<p>Realize o Agendamento do seu amiguinho.</p>
 					</div>
-				</section>
+				</div>
 				
+				<div class="container">
+			      <div class= "row">
+			        <div class="col-sm-4">
+			          <div class="panel panel-success">
+			            <div class="panel-heading">
+			              <h2 class="panel-title">Seu Agendamento</h2>
+			            </div>
+			            <div class="panel-body">
+			              <img src="resources/images/tab2.png" alt="Fuzzy Cardigan" class="img-thumbnail img-responsive hidden-xs">
+			              <dl>
+								<dt>Dono</dt>
+									<dd>Milton Reis</dd>
+								<dt>Animal</dt>
+									<dd>Thor</dd>
+								<dt>Serviço</dt>
+									<dd>Banho</dd>
+								<dt>Preço</dt>
+									<dd>R$ 35,00</dd>
+							</dl>
+			            </div>
+			          </div>
+			        </div>
+			        <form action="adicionaTarefa" method="post" class="col-sm-8">
+			          <div class="row">
+			            <fieldset class="col-md-6">
+			              <legend>Dados pessoais</legend>
+			
+			              <div class="form-group">
+			                <label for="nome">Nome completo</label>
+			                <input type="text" class="form-control" id="nome" name="nome" autofocus required>
+			              </div>
+			
+			              <div class="form-group">
+			                <label for="email">Email</label>
+			                <input type="email" class="form-control" id="email" name="email" placeholder="email@exemplo.com">
+			              </div>
+			              <div class="form-group">
+								<label for="cep">Cep</label>
+								<input type="text" class="form-control" id="cep" name="cep" required>
+							</div>
+							<div class="form-group">
+								<label for="endereco">Endereço</label>
+								<input type="text" class="form-control" id="endereco" name="endereco" required>
+							</div>
+							<div class="form-group">
+								<label for="cidade">Cidade</label>
+								<input type="text" class="form-control" id="cidade" name="cidade" required>
+							</div>
+							<div class="form-group">
+								<label for="uf">Estado</label>
+								<input type="text" class="form-control" id="uf" name="uf" required>
+							</div>		
+			
+			              <div class="form-group">
+			                <label for="cpf">CPF</label>
+			                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+			              </div>
+			
+			              <div class="checkbox">
+			                <label>
+			                  <input type="checkbox" value="sim" name="spam" checked>
+			                  Quero receber promoções
+			                </label>
+			              </div>
+			            </fieldset>
+			
+			            <fieldset class="col-md-6">
+			              <legend>Serviço</legend>
+			              		<div class="form-group">
+									<label for="animal">Animal</label>
+									<input type="text" class="form-control" id="animal" name="animal" required>
+								</div>
+								<div class="form-group">
+									<label for="dataAgendamento">Agenda Data</label>
+									<input type="date" class="form-control" id="dataAgendamento" name="dataAgendamento">
+								</div>
+								<div class="form-group">
+									<label for="horaAgendamento">Agenda Hora</label>
+									<input type="date" class="form-control" id="horaAgendamento" name="horaAgendamento">
+								</div>
+								<div class="form-group">
+									<label for="servico">Serviço</label>
+									<select name="servico" id="servico" class="form-control">
+										<option value=""></option>
+										<option value="banho">Banho</option>
+										<option value="tosa">Tosa</option>
+										<option value="banhoetosa">Banho\Tosa</option>
+										<option value="tosatesoura">Tosa Tesoura</option>
+									</select>													
+								</div>
+								
+								<div class="form-group">
+									<label for="descricao">Descrição</label>
+									<input type="text" class="form-control" id="descricao" name="descricao" required>
+								</div>
+			            </fieldset>
+			          </div>
+			
+			          <button type="submit" value="Adicionar" class="btn btn-primary">
+			            <span class="glyphicon glyphicon-thumbs-up"></span>
+			            Confirmar
+			          </button>
+			        </form>
+			        <input type="reset" name="reset" value="Limpar">																										  			    				
+		    		<a href="limparTarefa" class="btn btn-info" role="button">Limpar</a>				
+		    		<a href="listaTarefas" class="btn btn-info" role="button">Voltar</a>
+			      </div>
+			    </div>
+			    				
 			<c:import url="/WEB-INF/views/footer.jsp" />	
 			
 			<!-- core Script -->

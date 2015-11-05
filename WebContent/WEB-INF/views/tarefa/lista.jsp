@@ -53,39 +53,38 @@
 							<table id="tabelaTarefas" border="1" class="table table-hover">
 								<tr>
 									<th>Id</th>
-									<th>Descrição</th>
-									<th>Finalizado?</th>
+									<th>Descrição</th>									
 									<th>Data de finalização</th>
-									<th>Excluir</th>			
-									<th>Alterar</th>
+									<th>Fim</th>
+									<th>delete</th>
+									<th>Edit</th>								
 								</tr>
 								<c:forEach items="${tarefas}" var="tarefa">
 									<tr id="tarefa_${tarefa.id }" >
 										<td>${tarefa.id}</td>
 										<td>${tarefa.descricao}</td>
-										<c:if test="${tarefa.finalizado eq false}">
-											<td>
-												<a href="#" onClick="finalizaAgora(${tarefa.id})">
-													Finalizar
-												</a>
-											</td>
-										</c:if>
-										<c:if test="${tarefa.finalizado eq true}">
-											<td>Finalizado</td>
-										</c:if>
+										
 										<td>
 											<fmt:formatDate value="${tarefa.dataFinalizacao.time}" pattern="dd/MM/yyyy" />
 										</td>
-														
-													
-										<td id='removetar_${tarefa.id}'><a href="#" onClick="removerAgora(${tarefa})">Remover agora!</a></td>								
-										<td><a href="mostraTarefa?id=${tarefa.id}">Alterar</a></td>
+										
+										<c:if test="${tarefa.finalizado eq false}">											
+											<td><a href="#" onClick="finalizaAgora(${tarefa.id})"> <img src="<c:url value="/resources/images/functional/finish.png"/>" /></a>
+										</c:if>
+										<c:if test="${tarefa.finalizado eq true}">
+											<td>Finalizado</td>
+										</c:if>				
+																																	
+										<td id='removetar_${tarefa.id}'><a href="#" onClick="removerAgora(${tarefa})"> <img src="<c:url value="/resources/images/functional/delete.png"/>" /></a>										
+										<td><a href="mostraTarefa?id=${tarefa.id}"> <img src="<c:url value="/resources/images/functional/edit.png"/>" /></a>
+										
 									</tr>
 								</c:forEach>
 							</table>
 												
 						  	<a href="novaTarefa" class="btn btn-info" role="button">Novo</a>				    								    						
 				    		<a href="logout" class="btn btn-info" role="button">Sair</a>
+				    		
 						</div>
 					</div>
 				</section>
