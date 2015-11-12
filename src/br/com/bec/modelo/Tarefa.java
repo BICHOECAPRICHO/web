@@ -24,21 +24,18 @@ public class Tarefa {
 	@Size(min=5, message="{tarefa.descricao.pequena}")
 	private String descricao;
 	
-	private String dono;
+	private Long idCliente;	
 	private String animal;
 	
 
 	private boolean finalizado;
 	
-	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@DateTimeFormat(pattern="dd/MM/yyyy h:mm:ss")
 	private Calendar dataFinalizacao;
 	
-	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@DateTimeFormat(pattern="dd/MM/yyyy h:mm:ss")
 	private Calendar dataAgendamento;
-			
-	@Temporal(TemporalType.TIME)
-    public Date horaAgendamento;
+
 	
 	public Long getId() {
 		return id;
@@ -80,14 +77,6 @@ public class Tarefa {
 		this.dataAgendamento = dataAgendamento;
 	}
 
-	public String getDono() {
-		return dono;
-	}
-
-	public void setDono(String dono) {
-		this.dono = dono;
-	}
-
 	public String getAnimal() {
 		return animal;
 	}
@@ -96,12 +85,12 @@ public class Tarefa {
 		this.animal = animal;
 	}
 
-	public Date getHoraAgendamento() {
-		return horaAgendamento;
+	public Long getIdDono() {
+		return idCliente;
 	}
 
-	public void setHoraAgendamento(Date horaAgendamento) {
-		this.horaAgendamento = horaAgendamento;
+	public void setIdDono(Long idCliente) {
+		this.idCliente = idCliente;
 	}
 
 }
