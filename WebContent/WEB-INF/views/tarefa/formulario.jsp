@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<html>
+<html lang="pt-BR">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<meta charset="utf-8">
@@ -63,10 +63,15 @@
 			          <div class="row">
 			            <fieldset class="col-md-6">
 			              <legend>Dados pessoais</legend>
+			              
+			              <div class="form-group">
+			                <label for="cpf">CPF</label>
+			                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" autofocus required>
+			              </div>			
 			
 			              <div class="form-group">
-			                <label for="nome">Nome completo</label>
-			                <input type="text" class="form-control" id="nome" name="nome" autofocus required>
+			                <label for="nomeCliente">Nome completo</label>
+			                <input type="text" class="form-control" id="nomeCliente" name="nomeCliente" required>
 			              </div>
 			
 			              <div class="form-group">
@@ -88,12 +93,7 @@
 							<div class="form-group">
 								<label for="uf">Estado</label>
 								<input type="text" class="form-control" id="uf" name="uf" required>
-							</div>		
-			
-			              <div class="form-group">
-			                <label for="cpf">CPF</label>
-			                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" required>
-			              </div>
+							</div>								              
 			
 			              <div class="checkbox">
 			                <label>
@@ -111,12 +111,8 @@
 								</div>
 								<div class="form-group">
 									<label for="dataAgendamento">Agenda Data</label>
-									<input type="date" class="form-control" id="dataAgendamento" name="dataAgendamento">
-								</div>
-								<div class="form-group">
-									<label for="horaAgendamento">Agenda Hora</label>
-									<input type="date" class="form-control" id="horaAgendamento" name="horaAgendamento">
-								</div>
+									<input type="datetime-local" class="form-control" id="dataAgendamento" name="dataAgendamento" min="2015-01-01">
+								</div>								
 								<div class="form-group">
 									<label for="servico">Serviço</label>
 									<select name="servico" id="servico" class="form-control">
