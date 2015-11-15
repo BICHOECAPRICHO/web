@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
 public class Tarefa {
@@ -30,11 +31,13 @@ public class Tarefa {
 
 	private boolean finalizado;
 	
-	@DateTimeFormat(pattern="dd/MM/yyyy h:mm:ss")
-	private Calendar dataFinalizacao;
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(iso = ISO.DATE)
+	private Date dataFinalizacao;
 	
-	@DateTimeFormat(pattern="dd/MM/yyyy h:mm:ss")
-	private Calendar dataAgendamento;
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(iso = ISO.DATE)
+	private Date dataAgendamento;
 
 	
 	public Long getId() {
@@ -61,19 +64,19 @@ public class Tarefa {
 		this.finalizado = finalizado;
 	}
 
-	public Calendar getDataFinalizacao() {
+	public Date getDataFinalizacao() {
 		return dataFinalizacao;
 	}
 
-	public void setDataFinalizacao(Calendar dataFinalizacao) {
+	public void setDataFinalizacao(Date dataFinalizacao) {
 		this.dataFinalizacao = dataFinalizacao;
 	}
 
-	public Calendar getDataAgendamento() {
+	public Date getDataAgendamento() {
 		return dataAgendamento;
 	}
 
-	public void setDataAgendamento(Calendar dataAgendamento) {
+	public void setDataAgendamento(Date dataAgendamento) {
 		this.dataAgendamento = dataAgendamento;
 	}
 

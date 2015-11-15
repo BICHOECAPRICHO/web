@@ -111,7 +111,7 @@
 								</div>
 								<div class="form-group">
 									<label for="dataAgendamento">Agenda Data</label>
-									<input type="datetime-local" class="form-control" id="dataAgendamento" name="dataAgendamento" min="2015-01-01">
+									<input type="date" class="form-control" id="dataAgendamento" name="dataAgendamento" min="2015-01-01">
 								</div>								
 								<div class="form-group">
 									<label for="servico">Serviço</label>

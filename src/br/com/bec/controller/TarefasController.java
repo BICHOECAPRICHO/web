@@ -30,30 +30,7 @@ public class TarefasController {
 	
 	@Autowired
 	ClienteDao daoCli;
-	
-	@InitBinder
-	public void initBinder(WebDataBinder binder) {
-	    binder.registerCustomEditor(Calendar.class, new PropertyEditorSupport() {
-	        @Override
-	        public void setAsText(String value) {
-	            try {
-	                Calendar cal = Calendar.getInstance();
-	                cal.setTime(new SimpleDateFormat("dd-MM-yyyy").parse(value));
-	                setValue(cal);
-	            } catch (ParseException | java.text.ParseException e) {
-	                setValue(null);
-	            }
-	        }
-
-	        @Override
-	        public String getAsText() {
-	            if (getValue() == null) {
-	                return "";
-	            }
-	            return new SimpleDateFormat("dd-MM-yyyy").format(((Calendar) getValue()).getTime());
-	        }
-	    });
-	}
+		
 	
 	@RequestMapping("novaTarefa")
 	public String form() {
