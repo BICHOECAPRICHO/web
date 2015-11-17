@@ -30,6 +30,15 @@
 	<body class="homepage">		
 			<c:import url="/WEB-INF/views/header.jsp" />
 			
+			<script type="text/javascript">
+				function buscaCPF(CPF) {
+					alert("Funciona!" + CPF);
+					$.post("buscaCPF", {'CPF' : CPF}, function(resposta) {				
+						$("#DadosPessoais").html(resposta);								
+					});
+				}
+			</script>
+			
 				<div class="jumbotron">
 					<div class="container">
 						<h1>Agenda</h1>
@@ -59,14 +68,14 @@
 			            </div>
 			          </div>
 			        </div>
-			        <form action="adicionaTarefa" method="post" class="col-sm-8">
+			        <form action="adicionaTarefa" method="post" class="col-sm-8" name="cadAgenda">
 			          <div class="row">
-			            <fieldset class="col-md-6">
+			            <fieldset class="col-md-6" id="DadosPessoais">
 			              <legend>Dados pessoais</legend>
 			              
 			              <div class="form-group">
 			                <label for="cpf">CPF</label>
-			                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" autofocus required>
+			                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" autofocus required onblur="buscaCPF(cadAgenda.cpf.value)">
 			              </div>			
 			
 			              <div class="form-group">
@@ -112,6 +121,10 @@
 								<div class="form-group">
 									<label for="dataAgendamento">Agenda Data</label>
 									<input type="date" class="form-control" id="dataAgendamento" name="dataAgendamento" min="2015-01-01">
+								</div>
+								<div class="form-group">
+									<label for="horaAgendamento">Agenda Hora</label>
+									<input type="time" class="form-control" id="horaAgendamento" name="horaAgendamento" min="08:00">
 								</div>								
 								<div class="form-group">
 									<label for="servico">Serviço</label>
