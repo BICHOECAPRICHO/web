@@ -1,6 +1,6 @@
 package br.com.bec.modelo;
 
-import java.util.Calendar;
+
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -38,6 +38,8 @@ public class Tarefa {
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(iso = ISO.DATE)
 	private Date dataAgendamento;
+	
+	private String horaAgendamento;
 
 	
 	public Long getId() {
@@ -94,6 +96,22 @@ public class Tarefa {
 
 	public void setIdDono(Long idCliente) {
 		this.idCliente = idCliente;
+	}
+
+	public Long getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(Long idCliente) {
+		this.idCliente = idCliente;
+	}
+
+	public String getHoraAgendamento() {
+		return horaAgendamento;
+	}
+
+	public void setHoraAgendamento(String horaAgendamento) {
+		this.horaAgendamento = horaAgendamento;
 	}
 
 }
