@@ -31,8 +31,7 @@
 			<c:import url="/WEB-INF/views/header.jsp" />
 			
 			<script type="text/javascript">
-				function buscaCPF(CPF) {
-					alert("Funciona!" + CPF);
+				function buscaCPF(CPF) {					
 					$.post("buscaCPF", {'CPF' : CPF}, function(resposta) {				
 						$("#DadosPessoais").html(resposta);								
 					});
@@ -141,6 +140,11 @@
 									<label for="descricao">Descrição</label>
 									<input type="text" class="form-control" id="descricao" name="descricao" required>
 								</div>
+								
+								<div class="form-group">
+									<label for="valor">Valor</label>
+									<input type="tel" class="form-control" id="valor" name="valor" required="required" maxlength="15" />
+								</div>
 			            </fieldset>
 			          </div>
 			
@@ -148,8 +152,7 @@
 			            <span class="glyphicon glyphicon-thumbs-up"></span>
 			            Confirmar
 			          </button>
-			        </form>
-			        <input type="reset" name="reset" value="Limpar">																										  			    				
+			        </form>			        																									  			    			
 		    		<a href="limparTarefa" class="btn btn-info" role="button">Limpar</a>				
 		    		<a href="listaTarefas" class="btn btn-info" role="button">Voltar</a>
 			      </div>
@@ -159,6 +162,7 @@
 			
 			<!-- core Script -->
 			<script type="text/javascript" src="resources/js/jquery.js"></script>
+			<script type="text/javascript" src="resources/js/jquery.maskMoney.js"></script>
 		    <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
 		    <script type="text/javascript" src="resources/js/jquery.prettyPhoto.js"></script>
 		    <script type="text/javascript" src="resources/js/jquery.isotope.min.js"></script>
