@@ -53,20 +53,23 @@
 							<table id="tabelaTarefas" border="1" class="table table-hover">
 								<tr>
 									<th>Id</th>
-									<th>Descrição</th>									
-									<th>Data de finalização</th>
-									<th>Fim</th>
-									<th>delete</th>
-									<th>Edit</th>								
+									<th>Animal</th>
+									<th>Descrição</th>	
+									<th>Valor</th>										
+									<th>Data de Agendamento</th>
+									<th>Hora de Agendamento</th>
+									<th></th>
+									<th></th>
+									<th></th>								
 								</tr>
 								<c:forEach items="${tarefas}" var="tarefa">
 									<tr id="tarefa_${tarefa.id }" >
 										<td>${tarefa.id}</td>
+										<td>${tarefa.animal}</td>
 										<td>${tarefa.descricao}</td>
-										
-										<td>
-											<fmt:formatDate value="${tarefa.dataFinalizacao.time}" pattern="dd/MM/yyyy" />
-										</td>
+										<td>${tarefa.valor}</td>										
+										<td><fmt:formatDate value="${tarefa.dataAgendamento}" /></td>										
+										<td>${tarefa.horaAgendamento}</td>
 										
 										<c:if test="${tarefa.finalizado eq false}">											
 											<td><a href="#" onClick="finalizaAgora(${tarefa.id})"> <img src="<c:url value="/resources/images/functional/finish.png"/>" /></a>

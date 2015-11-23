@@ -20,28 +20,31 @@ public class Tarefa {
 	@Id
 	@GeneratedValue
 	private Long id;
+	private Long idCliente;	
+	private boolean finalizado;
 	
 	@NotNull(message="{tarefa.descricao.vazia}")
 	@Size(min=5, message="{tarefa.descricao.pequena}")
 	private String descricao;
 	
-	private Long idCliente;	
-	private String animal;
+	@NotNull(message="{tarefa.animal.vazia}")
+	@Size(min=5, message="{tarefa.animal.pequena}")
+	private String animal;			
 	
-
-	private boolean finalizado;
-	
+	@NotNull(message="{tarefa.horaAgendamento.vazia}")
+	private String horaAgendamento;
+		
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(iso = ISO.DATE)
 	private Date dataFinalizacao;
 	
+	@NotNull(message="{tarefa.dataAgendamento.vazia}")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(iso = ISO.DATE)
 	private Date dataAgendamento;
 	
-	private String horaAgendamento;
-
-	
+	private float valor;
+			
 	public Long getId() {
 		return id;
 	}
@@ -112,6 +115,14 @@ public class Tarefa {
 
 	public void setHoraAgendamento(String horaAgendamento) {
 		this.horaAgendamento = horaAgendamento;
+	}
+
+	public float getValor() {
+		return valor;
+	}
+
+	public void setValor(float valor) {
+		this.valor = valor;
 	}
 
 }

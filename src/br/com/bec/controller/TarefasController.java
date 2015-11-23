@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -30,11 +31,11 @@ public class TarefasController {
 	}
 
 	@RequestMapping("buscaCPF")
-	public String buscaCPF(String CPF, Model model) {
+	public String buscaCPF(String CPF, ModelMap model) {
 		Cliente cliente;
 		cliente = daoCli.buscaPorCPF(CPF);
 		
-		model.addAttribute("cpf", cliente.getCpf());
+		model.addAttribute("cpf", CPF);
 		model.addAttribute("nomeCliente", cliente.getNome());
 		model.addAttribute("email", cliente.getEmail());
 		model.addAttribute("cep", cliente.getCep());
