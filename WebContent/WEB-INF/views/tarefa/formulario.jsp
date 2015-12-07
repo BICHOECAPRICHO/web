@@ -31,10 +31,14 @@
 			<c:import url="/WEB-INF/views/header.jsp" />
 			
 			<script type="text/javascript">
-				function buscaCPF(CPF) {					
-					$.post("buscaCPF", {'CPF' : CPF}, function(resposta) {				
-						$("#DadosPessoais").html(resposta);								
-					});
+				function buscaCPF(CPF) {
+
+					validarCPF(CPF);
+					if(CPF != ""){
+						$.post("buscaCPF", {'CPF' : CPF}, function(resposta) {				
+							$("#DadosPessoais").html(resposta);								
+						});
+					}					
 				}
 			</script>
 			
