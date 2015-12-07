@@ -35,14 +35,16 @@ public class TarefasController {
 		Cliente cliente;
 		cliente = daoCli.buscaPorCPF(CPF);
 		
-		model.addAttribute("cpf", CPF);
-		model.addAttribute("nomeCliente", cliente.getNome());
-		model.addAttribute("email", cliente.getEmail());
-		model.addAttribute("cep", cliente.getCep());
-		model.addAttribute("endereco", cliente.getEndereco());
-		model.addAttribute("cidade", cliente.getCidade());
-		model.addAttribute("uf", cliente.getUf());		
-		
+		if(cliente != null)
+		{
+			model.addAttribute("cpf", CPF);
+			model.addAttribute("nomeCliente", cliente.getNome());
+			model.addAttribute("email", cliente.getEmail());
+			model.addAttribute("cep", cliente.getCep());
+			model.addAttribute("endereco", cliente.getEndereco());
+			model.addAttribute("cidade", cliente.getCidade());
+			model.addAttribute("uf", cliente.getUf());		
+		}
 		return "tarefa/formCPF";
 	}
 
