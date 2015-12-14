@@ -1,3 +1,26 @@
+<script type="text/javascript">
+	
+	$(document).ready(function () {     
+		if("${nomeCliente}" == ''){
+	        $('#nomeCliente').attr("readonly", false);
+	        $('#email').attr("readonly", false);
+	        $('#cep').attr("readonly", false);
+	        $('#endereco').attr("readonly", false);
+	        $('#cidade').attr("readonly", false);
+	        $('#uf').attr("readonly", false);	        
+		}		
+		if("${nomeCliente}" != ''){
+	        $('#nomeCliente').attr("readonly", true);
+	        $('#email').attr("readonly", true);
+	        $('#cep').attr("readonly", true);
+	        $('#endereco').attr("readonly", true);
+	        $('#cidade').attr("readonly", true);
+	        $('#uf').attr("readonly", true);
+		}               
+    }); 
+
+</script>
+
 <legend>Dados pessoais</legend>
 	              
 	<div class="form-group">
@@ -8,8 +31,8 @@
 	
 	<div class="form-group">
 		<label for="nomeCliente">Nome completo</label>
-		<input type="text" class="form-control" id="nomeCliente" name="nomeCliente" required
-		value="${nomeCliente}" readonly="readonly">
+		<input type="text" class="form-control" id="nomeCliente" name="nomeCliente" placeholder="Joao Silva" required 
+		value="${nomeCliente}">
 	</div>
 	
 	<div class="form-group">

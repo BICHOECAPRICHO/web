@@ -38,7 +38,14 @@
 							$("#DadosPessoais").html(resposta);								
 						});
 					}else{
+						$('#nomeCliente').attr("readonly", true);
+				        $('#email').attr("readonly", true);
+				        $('#cep').attr("readonly", true);
+				        $('#endereco').attr("readonly", true);
+				        $('#cidade').attr("readonly", true);
+				        $('#uf').attr("readonly", true);
 						alert("CPF Invalido");
+						
 						}					
 				}
 
@@ -46,7 +53,7 @@
 
 				function validarCPF(cpf) {  
 				    cpf = cpf.replace(/[^\d]+/g,'');    
-				    if(cpf == '') return false; 
+				    if(cpf == '') return true; 
 				    // Elimina CPFs invalidos conhecidos    
 				    if (cpf.length != 11 || 
 				        cpf == "00000000000" || 
@@ -123,7 +130,8 @@
 			
 			              <div class="form-group">
 			                <label for="nomeCliente">Nome completo</label>
-			                <input type="text" class="form-control" id="nomeCliente" name="nomeCliente" required>
+			                <input type="text" class="form-control" id="nomeCliente" name="nomeCliente" placeholder="Joao Silva" 
+			                required>
 			              </div>
 			
 			              <div class="form-group">
